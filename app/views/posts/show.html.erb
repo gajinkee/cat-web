@@ -1,14 +1,18 @@
-<h1><%= @post.title %></h1>
-
+<div class="container">
+<div class= "pt-5">
+  <h1><%= @post.title %></h1>
+</div>
 <p><%= @post.body %></p>
 
-<ul>
-  <li><%= link_to "Edit", edit_post_path(@post) %></li>
-  <li><%= link_to "Destroy", post_path(@post), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-    } %></li>
-</ul>
+<% if user_signed_in?%> 
+  <ul>
+    <li><%= link_to "Edit", edit_post_path(@post) %></li>
+    <li><%= link_to "Destroy", post_path(@post), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+      } %></li>
+  </ul>
+<%end%>
 
 <h2>Comments</h2>
 <%= render @post.comments %>
