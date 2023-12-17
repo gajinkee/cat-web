@@ -1,23 +1,17 @@
-<h1>Posts</h1>
+
 <body>
-    <img src="https://cataas.com/cat" width="600" height="300">
-    <div>
-    
-    Total articles: <%=Post.public_count%> 
-    
-    <%=link_to "Create new post", new_post_path%>
+    <div class="container">
+        <div class = "row h-100 d-flex align-items-center justify-content-center" >
+            <img src="https://cataas.com/cat" width=auto height="300">
+            <div>
+                Total posts: <%=Post.public_count%> 
+                <%=link_to "Create new post", new_post_path, class: "btn btn-outline-success my-2 my-sm-0"%>
+            </div>
+        </div>
+        <div class = "row h-100 d-flex align-items-center justify-content-center" >
+            <%=render partial: "posts/center"%>
+        </div> 
     </div>
-    <ul> 
-        <%@posts.each do |post|%>
-            <% unless post.archived?%>
-            <li>
-                <%= link_to post.title, post%>
-            </li>
-            <h2><%=post.body%></h2>
-            <%@posts.each%>
-            <%end%>
-        <%end%>
-    </ul>
 </body>
     
 
