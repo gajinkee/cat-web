@@ -1,13 +1,16 @@
 <div class="container">
-<div class= "pt-5">
-  <h1><%= @post.title %></h1>
+  <div class= "pt-5">
+    <%= @user%>
+  </div>
+  <div>
+    <h1><%= @post.title %></h1>
 </div>
 <p><%= @post.body %></p>
 
 <% if user_signed_in?%> 
   <ul>
     <li><%= link_to "Edit", edit_post_path(@post) %></li>
-    <li><%= link_to "Destroy", post_path(@post), data: {
+    <li><%= link_to "Delete", post_path(@post), data: {
                       turbo_method: :delete,
                       turbo_confirm: "Are you sure?"
       } %></li>

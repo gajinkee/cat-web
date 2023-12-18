@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "posts#index"
 
-  resources :posts do
-    resources :comments #comments is a nested resource in posts
+  scope :users, shallow: true do
+    resources :posts do
+      resources :comments #comments is a nested resource in posts
+    end
   end
 end
