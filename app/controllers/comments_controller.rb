@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
-    http_basic_authenticate_with name:"smt", password:"secret", only: :destroy
 
     def create
         @post = Post.find(params[:post_id])
+        @user = User.find(current_user.id)
         @comment = @post.comments.create(comment_params)
         redirect_to post_path(@post)
     end

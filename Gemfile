@@ -71,3 +71,5 @@ gem "bootstrap", "~> 5.0"
 gem "cssbundling-rails"
 
 gem 'dartsass-sprockets'
+
+gem 'devise'

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   # get 'posts/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # get "/posts", to: "posts#index"
@@ -10,7 +11,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "posts#index"
 
-  resources :posts do
-    resources :comments #comments is a nested resource in posts
+  scope :users, shallow: true do
+    resources :posts do
+      resources :comments #comments is a nested resource in posts
+    end
   end
 end

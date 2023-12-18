@@ -11,8 +11,10 @@
   </head>
 
   <body>
-    <%= render partial: "layouts/header"%>
-    <%= yield %>
-    <%= render partial: "layouts/footer"%>
+    <div data-bs-theme="dark">
+      <%= render partial: "layouts/header"%>
+      <%= yield %>
+      <%= render partial: "layouts/footer"%>
+    </div>
   </body>
 </html>
