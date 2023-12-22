@@ -52,3 +52,4 @@ Todo
    2b. Search function for posts (optional)
 3. Switch to MUI (optional. Bootstrap is fine)
 4. Redesign the page
+5. github workflow needs to be edited to work (default commands are wrong)
