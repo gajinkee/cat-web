@@ -1,24 +1,54 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby version
 
-Things you may want to cover:
+- System dependencies
 
-* Ruby version
+- Configuration
 
-* System dependencies
+- Database creation
+  `rails db:migrate`
+  or
+  `rake db:migrate`
 
-* Configuration
+- Database initialization
+  rails db:create
 
-* Database creation
+- How to run the test suite
 
-* Database initialization
+- Services (job queues, cache servers, search engines, etc.)
 
-* How to run the test suite
+- Deployment instructions
+  run the script to handle compile
+  use git bash or WSL if on windows
+  `render-build.sh`
+  `bin/dev` or `rails s` should start the server
 
-* Services (job queues, cache servers, search engines, etc.)
+- ...
+<h1>Overall</h1>
 
-* Deployment instructions
+1. react (typescript) front end + rails 7 backend (ie dont use erb templating engine)
+2. use postgre database to integrate with render on deploy easier
+3. MUI component library best (bootstrap was easier but for this assignment MUI better)
+4. MVC (Model -> pgsql , View -> react,typescript , Controller -> Ruby )
 
-* ...
+Problems:
+
+1. wat version of rails to use...webpacker works for rails 6 but rails 7 uses importmapped hotwire or smt
+2. shakapacker replaces webpacker tho... (soln: Just use webpacker. Upgrade to shakapaker possibly in future)
+3. typescript needed for functionality so cant rely on esb which I already created a project on
+   3a. Restart project from scratch with above implementations and implement react for the front
+
+Solutions found:
+
+1. rails 7 with react is the way
+2. use css-bundling (the default options for many things where wrong out-the-box)
+3. react frontend
+
+Todo
+
+1. Commenter is incorrect. Shud reflect current user
+2. Tags for each post (major task, impt!)
+   2b. Search function for posts (optional)
+3. Switch to MUI (optional. Bootstrap is fine)
+4. Redesign the page
