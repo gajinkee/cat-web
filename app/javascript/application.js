@@ -7,3 +7,4 @@ import "controllers"
 //= require jquery3
 //= require popper
 //= require bootstrap
+import * as bootstrap from "bootstrap"
