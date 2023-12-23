@@ -3,25 +3,31 @@
         <ul> 
             <%@posts.each do |post|%>
                 <% unless post.archived?%>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="well">
-                                <p>Username</p>
-                                <div class="col-sm-9">
-                                    <div class="well">
-                                        <div>
-                                            <%= link_to post.title, post%>
+                    <%= link_to post do%>
+                    <div class="border">
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="well">
+                                    
+                                    <div class="col-sm-9">
+                                        <div class="well">
+                                            <div>
+                                               
+                                            </div>
                                         </div>
                                     </div>
+                                    <%= User.find(post.user_id).username%>
+                                    <%= image_tag "blank-profile.png", size:'55x55', class:"img-circle" %>   
                                 </div>
-                                <%= image_tag "blank-profile.png", size:'55x55', class:"img-circle" %>   
                             </div>
+                            <%=post.body%>
+                            <%@posts.each%>
                         </div>
-                        <%=post.body%>
-                        <%@posts.each%>
-                        <%end%>
-                    </div>
+                        Total Comments: <%=@Comments%>
+                    </div>                     
+                    <%end%>
+                <%end%>
                 <br>
             <%end%>
         </ul>

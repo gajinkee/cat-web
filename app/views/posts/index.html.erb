@@ -1,15 +1,17 @@
 
 <body>
     <div class="container">
+        
         <div class = "row h-100 d-flex align-items-center justify-content-center" >
             <img src="https://cdn2.thecatapi.com/images/aa4.jpg" width=auto height="300">
-            <div>
-                Total posts: <%=Post.public_count%>
+        </div>
+        <br>
+        <div>
                 <% if user_signed_in?%> 
                     <%=link_to "Create new post", new_post_path, class: "btn btn-outline-success my-2 my-sm-0"%>
                 <%end%>
             </div>
-        </div>
+        <br>
         <div class = "row h-100 d-flex align-items-center justify-content-center" >
             <%=render partial: "posts/center"%>
         </div> 

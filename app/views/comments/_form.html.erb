@@ -1,6 +1,6 @@
 <%= form_with model: [ @post, @post.comments.build ] do |form| %>
     <p>
-        <%= form.label @user %><br>
+        <%= form.label current_user.username %><br>
         <%= form.hidden_field :commenter, :value => @user%>
     </p>
     <p>
