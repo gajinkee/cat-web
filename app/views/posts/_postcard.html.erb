@@ -1,0 +1,14 @@
+
+<div class="card mb-3 bg-light text-black">
+    <a href= users/posts/<%=post.id%> class="link-tag" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+    <%# <img class="card-img-top" src="https://cdn2.thecatapi.com/images/aa4.jpg" alt="Card image cap" height=100> %>
+    <div class="card-body">
+        <div class="col-sm-3">    
+            <%= image_tag "blank-profile.png", size:'55x55', class:"img-circle" %>   
+            <%= User.find(post.user_id).username%>
+        </div>
+        <h5 class="card-title"><%=post.title%></h5>
+        <p class="card-text"><%=post.body%></p>
+        <p class="card-text text-dark"><small class="text-dark">Total Comments: <%=post.comments.count%></small></p>
+    </div>
+</div>         

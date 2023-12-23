@@ -37,19 +37,20 @@ Problems:
 1. wat version of rails to use...webpacker works for rails 6 but rails 7 uses importmapped hotwire or smt
 2. shakapacker replaces webpacker tho... (soln: Just use webpacker. Upgrade to shakapaker possibly in future)
 3. typescript needed for functionality so cant rely on esb which I already created a project on
-   3a. Restart project from scratch with above implementations and implement react for the front
+4. Restart project from scratch with above implementations and implement react for the front
 
 Solutions found:
 
 1. rails 7 with react is the way
 2. use css-bundling (the default options for many things where wrong out-the-box)
-3. react frontend
+3. react frontend only. `rails new -j esbuild` to allow by default
+4. Starting config `rails new app_name -j esbuild -db postgresql -c bootstrap` (or without bootstrap)
 
 Todo
 
-1. Commenter is incorrect. Shud reflect current user
-2. Tags for each post (major task, impt!)
-   2b. Search function for posts (optional)
-3. Switch to MUI (optional. Bootstrap is fine)
-4. Redesign the page
-5. github workflow needs to be edited to work (default commands are wrong)
+1. Commenter is incorrect. Shud reflect current user ✅
+2. Tags for each post (major task, impt!) 🚩
+3. Search function for posts (optional)
+4. Switch to MUI (optional. Bootstrap is fine) 🚩
+5. Redesign the page
+6. github workflow needs to be edited to work (default commands are wrong)
